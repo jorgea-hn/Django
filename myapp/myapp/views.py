@@ -7,3 +7,11 @@ def hola(request):
 
     print(request.GET)
     return HttpResponse(str(numeros_ord))
+
+def verificar(request,nombre,edad):
+    if edad < 12:
+        mensaje = f'Hola, {nombre} perdon no puede ingresar a la pagina'
+    else:
+        mensaje = f'Hola, {nombre}  puede ingresar'
+
+    return HttpResponse(mensaje)
